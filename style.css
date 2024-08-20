@@ -1,0 +1,43 @@
+:root {
+  --size-base: 16px;
+  --size-large: calc(var(--size-base) * 8);
+  --size-medium: calc(var(--size-base) * 4);
+  --size-small: calc(var(--size-base) * 2);
+  --gray-1: #BBBBBB;
+  --gray-2: #8D8D8D;
+  --gray-3: #838383;
+  --gray-4: #646464;
+  --gray-5: #202020;
+  --bg: var(--gray-5);
+  --fg: var(--gray-1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  font-size: var(--size-base);
+}
+
+#app {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#time {
+  font-size: var(--size-large);
+  color: var(--gray-3);
+}
+
+#seconds {
+  font-size: var(--size-medium);
+  color: var(--gray-4);
+}

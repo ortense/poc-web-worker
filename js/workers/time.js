@@ -4,10 +4,14 @@ const options = {
   hour12: false,
 }
 
-const update = () => self.postMessage(JSON.stringify({
+const update = (now = new Date()) => self.postMessage(JSON.stringify({
   type: 'updateTime',
-  value: new Intl.DateTimeFormat('en-US', options).format(new Date())
+  value: new Intl.DateTimeFormat('en-US', options).format(now)
 }))
 
 update()
-setInterval(update, 60 * 1000)
+
+setInterval(() => {
+  const now = new Date()
+  if (now.getSeconds() === 0) update(now)
+}, 1000)

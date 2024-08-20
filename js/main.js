@@ -6,12 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
     hour12: false,
   }
 
-  const setTime = () =>
+  const setTime = (now = new Date()) =>
     time.innerText = new Intl.DateTimeFormat('en-US', timeOptions)
-      .format(new Date())
+      .format(now)
 
   setTime()
-  setInterval(setTime, 60 * 1000)
+  setInterval(() => {
+    const now = new Date()
+    if (now.getSeconds() === 0) setTime()
+  }, 1000)
 
   const seconds = document.getElementById('seconds')
   const secondsOptions = { second: 'numeric' }

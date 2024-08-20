@@ -41,3 +41,8 @@ body {
   font-size: var(--size-medium);
   color: var(--gray-4);
 }
+
+#milliseconds {
+  font-size: var(--size-small);
+  color: var(--gray-2);
+}

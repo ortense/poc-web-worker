@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   const time = document.getElementById('time')
   const seconds = document.getElementById('seconds')
+  const milliseconds = document.getElementById('milliseconds')
 
   const eventMap = {
     updateTime: (value) => time.innerText = value,
     updateSeconds: (value) => seconds.innerHTML = value,
+    updateMilliseconds: (value) => milliseconds.innerHTML = value,
   }
 
   function messageHadler({ data }) {
@@ -19,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const workers = [
     'https://ortense.github.io/poc-web-worker-clock/js/workers/time.js',
     'https://ortense.github.io/poc-web-worker-clock/js/workers/seconds.js',
+    'https://ortense.github.io/poc-web-worker-clock/js/workers/milliseconds.js',
   ]
 
   workers

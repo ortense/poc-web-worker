@@ -1,13 +1,14 @@
 const options = {
   second: 'numeric',
+  fractionalSecondDigits: 1,
 }
 
 const update = () => self.postMessage(JSON.stringify({
-  type: 'updateSeconds',
+  type: 'updateMilliseconds',
   value: new Intl.DateTimeFormat('en-US', options)
     .format(new Date())
-    .padStart(2, '0')
+    .split('.')[1]
 }))
 
 update()
-setInterval(update, 1000)
+setInterval(update, 100)

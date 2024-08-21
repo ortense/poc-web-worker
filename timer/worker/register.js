@@ -49,4 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.code === 'Space') return sendStartStop()
     if (event.code === 'Escape') return sendReset()
   })
+
+  if ((new URL(location.href)).searchParams.has('auto')) {
+    sendStartStop()
+
+    setTimeout(() => {
+      sendStartStop()
+    }, 5000);
+  }
 })

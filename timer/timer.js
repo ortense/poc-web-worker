@@ -69,4 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100)
   }
 
+  if ((new URL(location.href)).searchParams.has('auto')) {
+    start()
+
+    setTimeout(() => {
+      stop()
+    }, 5000);
+  }
 })

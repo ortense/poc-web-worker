@@ -15,19 +15,19 @@ table {
   th, td {
     padding: var(--size-base) var(--size-extra-small) var(--size-extra-small);
   }
+}
 
-  a {
-    color: #8D8D8D;
-    text-decoration: none;
+a {
+  color: #8D8D8D;
+  text-decoration: none;
 
-    &::after {
-      margin-left: .25rem;
-      content: "\279A";
-      display:inline-block;
-    }
+  &::after {
+    margin-left: .25rem;
+    content: "\279A";
+    display:inline-block;
+  }
 
-    &:hover {
-      text-decoration: underline wavy;
-    }
+  &:hover {
+    text-decoration: underline wavy;
   }
 }

@@ -2,12 +2,12 @@ const padStart = val => val.toString().padStart(2, '0')
 const getHours = count => padStart(Math.floor(count / (10 * 60 * 60)))
 const getMinutes = count => padStart(Math.floor(count / (10 * 60)) % 60)
 const getSeconds = count => padStart(Math.floor(count / 10) % 60)
-const getTenths = count =>  Math.floor((count * 100 % 1000) / 100);
+const getTenths = count =>  Math.floor((count * 100 % 1000) / 100)
 
 const state = {
   running: false,
   count: 0,
-  interval: null
+  interval: null,
 }
 
 const fireEvent = (type, value) => self.postMessage(

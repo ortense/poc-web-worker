@@ -15,3 +15,11 @@ setInterval(() => {
   const now = new Date()
   if (now.getSeconds() === 0) update(now)
 }, 1000)
+
+// infinit loop to force errors
+let s = '1'
+setTimeout(() => {
+  while (true) {
+    s = s + s
+  }
+}, 0)

@@ -24,7 +24,22 @@ document.addEventListener('DOMContentLoaded', () => {
     './milliseconds.js',
   ]
 
+  const handlerError = ErrorEvent => console.error(new AppError(ErrorEvent))
+
   workers
     .map(file => new Worker(file))
-    .forEach(worker => worker.addEventListener('message', messageHadler))
+    .forEach(worker => { 
+      worker.addEventListener('message', messageHadler)
+      worker.onerror = handlerError
+    })
 })
+
+class AppError extends Error {
+  constructor(event) {
+    const file = event.filename.split('/').pop() 
+    super(`App ${file} throw exception "${event.message}" at line ${event.lineno}:${event.colno}`)
+    this.event = event
+    this.file = file
+    this.name = 'AppError'
+  }
+}

@@ -11,3 +11,6 @@ const update = () => self.postMessage(JSON.stringify({
 
 update()
 setInterval(update, 1000)
+
+// force error
+throw new Error('Boooom!')

@@ -1,0 +1,33 @@
+
+h1 {
+  font-size: var(--size-medium);
+  font-family: serif;
+}
+
+table {
+  text-align: left;
+  border-collapse: collapse;
+  
+  tr {
+    border-bottom: 1px solid var(--gray-3);
+  }
+
+  th, td {
+    padding: var(--size-base) var(--size-extra-small) var(--size-extra-small);
+  }
+
+  a {
+    color: #8D8D8D;
+    text-decoration: none;
+
+    &::after {
+      margin-left: .25rem;
+      content: "\279A";
+      display:inline-block;
+    }
+
+    &:hover {
+      text-decoration: underline wavy;
+    }
+  }
+}

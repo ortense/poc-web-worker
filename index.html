@@ -6,16 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Main Thread Clock</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index.css">
   <script src="./js/main.js"></script>
 
 </head>
 
 <body>
   <div id="app">
-    <p id="clock">
-      <span id="time">00:00</span>
-      <span id="seconds">00</span>.<span id="milliseconds">00</span>
-    </p>
+    <h1>Proof of Concept</h1>
+    <p>Writing same app using main thread and web workers to analyse performance impact.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Test</th>
+          <th>Main Thread Script</th>
+          <th>Web Worker</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Simple Clock</td>
+          <td>
+            <a href="./clock/">/poc-web-worker/clock</a>
+          </td>
+          <td>
+            <a href="./clock/worker/">/poc-web-worker/clock/worker</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Time Counter</td>
+          <td>
+            <a href="./timer/">/poc-web-worker/timer</a>
+          </td>
+          <td>
+            <a href="./timer/">/poc-web-worker/timer/worker</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </body>
 

@@ -3,6 +3,7 @@
   --size-large: calc(var(--size-base) * 8);
   --size-medium: calc(var(--size-base) * 4);
   --size-small: calc(var(--size-base) * 2);
+  --size-extra-small: calc(var(--size-base) / 2);
   --gray-1: #BBBBBB;
   --gray-2: #8D8D8D;
   --gray-3: #838383;
@@ -21,13 +22,15 @@
 body {
   font-family: monospace;
   font-size: var(--size-base);
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 #app {
   min-height: 100vh;
-  background-color: var(--bg);
-  color: var(--fg);
   display: flex;
+  gap: 2rem;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -45,4 +48,18 @@ body {
 #milliseconds {
   font-size: var(--size-small);
   color: var(--gray-2);
+}
+
+.hidden { display: none; }
+
+.action > button {
+  font-size: var(--size-small);
+  padding: var(--size-base) var(--size-small);
+  color: var(--gray-4);
+  background-color: var(--gray-5);
+  border: 1px solid var(--gray-4);
+
+  &:hover {
+    cursor: pointer;
+  }
 }
